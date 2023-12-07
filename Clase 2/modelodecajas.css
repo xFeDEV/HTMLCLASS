@@ -1,0 +1,59 @@
+.padre {
+    font: 1em sans-serif;
+}
+
+.padre div {
+    display: flex;
+    border: solid 10px #94D1D2;
+    width: 65px;
+    margin: 2px 1px;
+    padding: 2px;
+    text-align: justify;
+    background-color: #94D1D2;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    font: 1em sans-serif;
+    height: 300px;
+}
+ul li{
+    border: solid 1px white ;
+    background-color: #94D1D2;
+
+}
+.capitulo{
+    align-items: center;
+    font: 2em sans-serif;
+    display: flex;
+    height: 300px;
+    justify-content: center;
+    width: 300px;
+    background: #C1DBD2;
+    color: #333;
+}
+.sidebar{
+    font: 1em sans-serif;
+    display: flex;
+
+}
+
+.lateral {
+    text-align: center;
+    background-color: #85D7EF;
+    border: solid 2px white ;
+    height: 300px;
+    width: 150px
+}
+
+.contenido {
+    display: flex;
+    border: solid 10px #C1DBD2;
+    width: 400px;
+    height: 300px;
+    margin: 0px 1px;
+    text-align: justify;
+    background-color: #94D1D2;
+}
+
