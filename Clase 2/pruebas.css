@@ -1,0 +1,12 @@
+.encabezado {
+    display: flex;
+    width: 21%;
+    height: 59px;
+    background-color: black;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font:150% sans-serif;
+    font-weight: bold;
+}
