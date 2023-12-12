@@ -1,0 +1,29 @@
+.grupo{
+    display: flex;
+}
+
+.ColumLeft{
+    width: 15%;
+    height: 202px;
+    background-color: #0e7c74;
+    color: white;
+    font: 1em sans-serif;
+    padding: 9px;
+}
+.ColumRigth{
+    list-style: none;
+}
+
+.alta{
+    list-style: none;
+    border: solid lightgray 1px;
+    padding: 45px;
+    margin-left: -40px;
+    margin-top: -16px;
+}
+.baja{
+    list-style: none;
+    border: solid lightgray 1px;
+    padding: 45px;
+    margin-left: -40px;
+}

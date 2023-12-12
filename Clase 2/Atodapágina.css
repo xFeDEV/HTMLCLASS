@@ -1,0 +1,38 @@
+body {
+    text-align: center;
+    font: 1em sans-serif;
+}
+
+h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60px;
+    background-color: #D38900;
+}
+
+.grupo {
+    display: flex;
+
+}
+
+.izquierdo,
+.central,
+.derecho {
+    margin-top: -22px;
+    padding-top: 20px;
+    height: 300px;
+}
+
+.izquierdo,
+.derecho {
+    width: 25%;
+    background-color: black;
+    color: white;
+}
+
+.central {
+    width: 50%;
+    background-color: white;
+}

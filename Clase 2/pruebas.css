@@ -10,3 +10,22 @@
     font:150% sans-serif;
     font-weight: bold;
 }
+
+.parrafo{
+    font:100% sans-serif;
+    margin-top: -13px;
+    margin-bottom: 100px;
+}
+
+.Pie {
+    display: flex;
+    width: 21%;
+    height: 59px;
+    background-color: #ACACAC;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font:100% sans-serif;
+    font-weight: bold;
+}
