@@ -3,7 +3,6 @@
 }
 
 .padre div {
-    display: flex;
     border: solid 10px #94D1D2;
     width: 65px;
     margin: 2px 1px;
