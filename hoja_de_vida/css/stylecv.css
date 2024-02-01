@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Sixtyfour', sans-serif;
+    font-size: 1em;
+}
+
+body{
+    text-align: center;
+    color: #111B24
+}
+
+nav {
+    background-color: #111B24;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding-right: 20px;
+}
+
+nav ul li {
+    display: inline-block;/* Crea bloques para organizar horizontal mente*/
+    line-height: 4em;
+}
+
+nav ul li a {
+    display: block;
+    padding: 0 10px;
+    text-decoration: none;/* Quitar decoraciones*/
+}
+
+nav ul li a:hover { /* a hover sobre el texto con el mouse*/
+    background: #6E839E;
+}
+
+#mifoto{
+    width: 10%;    
+    border-radius: 20em;
+    border: 4px #111B24 solid;
+    box-shadow: 0px 0px 15px 10px black
+
+}
+
+.card {
+    background-image: url(../img/fondo2.jpg);
+    background-size: cover;
+    padding-top: 50px;
+    padding-bottom: 30em;
+}
+
+.card div{
+    padding-bottom: 3em;
+}
+ .card div h2, p{
+    padding-bottom: 1em;
+    text-shadow: 1px 1px 4px black;
+
+}
+
+#perfil{
+    width: 25em;
+    height: 25em;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2em;
+    background-color: #111B24;
+    color: aliceblue;
+}
+
+
+.mail{
+    color: white;
+    background-color:  #111b2460;
+    width: 30%;
+    margin: 0 auto;
+    padding-top: 1em;
+}
+
+
+
+
+
