@@ -1,0 +1,76 @@
+*{
+    font-family: 'Sixtyfour', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+#opcines_nav{
+    text-align: center;
+    background-color: black;
+    color: white;
+    list-style: none;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 4em;
+    padding-right: 1em;
+}
+nav ul li a{
+    display: block;
+    text-decoration: none;
+    padding: 0 10px;
+}
+nav ul li a:hover{
+    background-color: aqua;
+}
+
+.card {
+    text-align: center;
+    background-image: url(../img/fondo.jpg);
+    background-size: 100%;
+    padding-top: 2em;
+    color: blue;
+    padding-bottom: 40em;
+}
+
+#mifoto{
+    width: 10em;
+    height: 10em;
+    border-radius: 10em;
+    border: 3px blue solid;
+}
+
+#descripcion{
+    padding-top: 2em;
+} 
+
+.name{
+    background-color: rgba(0, 255, 255, 0.192);
+    width: 45%;
+    padding: 0.5em;
+    height: auto;
+    margin: auto;
+}
+
+.mail{
+    background-color: rgba(0, 255, 255, 0.192);
+    width: 45%;
+    padding: 0.5em;
+    height: auto;
+    margin: 2em auto auto auto;
+}
+
+.tel{
+    background-color: rgba(0, 255, 255, 0.192);
+    width: 45%;
+    padding: 0.5em;
+    height: auto;
+    margin: 2em auto auto auto;
+}
+
+#perfil{
+    background-color: rgba(0, 255, 255, 0.192);
+    width: 45%;
+    padding: 0.5em;
+    height: auto;
+    margin: 2em auto auto auto;
+}

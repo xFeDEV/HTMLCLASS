@@ -36,6 +36,10 @@ nav ul li a:hover { /* a hover sobre el texto con el mouse*/
     background: #6E839E;
 }
 
+
+
+
+
 #mifoto{
     width: 10%;    
     border-radius: 20em;
@@ -45,7 +49,7 @@ nav ul li a:hover { /* a hover sobre el texto con el mouse*/
 }
 
 .card {
-    background-image: url(../img/fondo2.jpg);
+    background-image: url(../img/fondo.jpg);
     background-size: cover;
     padding-top: 50px;
     padding-bottom: 30em;
@@ -79,6 +83,7 @@ nav ul li a:hover { /* a hover sobre el texto con el mouse*/
     margin: 0 auto;
     padding-top: 1em;
 }
+
 
 
 
