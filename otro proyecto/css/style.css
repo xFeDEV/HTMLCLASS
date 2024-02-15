@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#parte1{
+    border: 2px solid black;
+    width: 70%;
+    margin: 2em auto;
+    padding: 1em;
+}
+
+#carta{
+    /* border: 2px solid red; */
+    width: 30%;
+    display: inline-block;
+    margin: 2em 0;
+}
+
+img{
+    max-width: 100%;
+}
+#imgcarta{
+    width: 30%;
+    display: inline-block;
+    vertical-align: auto;
+}
+
+#textocarta {
+    width: 65%;
+    display: inline-block;
+}
+
+#parte1{
+    border: 2px solid black;
+    width: 90%;
+}
+
+ #tarjeta1{
+    /* border: 2px solid red; */
+    width: 30%;
+    text-align: center;
+    display: inline-block;
+    
+}       
+
+#tarjeta3{
+    display: inline-block;
+    border: 2px solid black;
+    width: 30%;
+    margin-left: 3em;
+    vertical-align: top;
+}
+
+#figuretarjeta3{
+   padding: 2em;
+}
+#imgtarjeta1{
+    max-width: 35%;
+}
+
+#parte2{
+    display: inline;
+}
+#section1{
+    width: 50;
+
+}
+
+
+
+/* --------------------------------------- */
+#segunda{
+    border: 2px solid black;
+}
+
+.articulo1{
+    width: 65%;
+    /* border: 2px solid black; */
+}
+.articulo2{
+    width: 30%;
+    /* border: 2px solid black; */
+}
+
+.articulo1, .articulo2{
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+.caja2{
+    width: 45%;
+    display: inline-block;
+    margin: 0 1em;
+}
+
+.articulo2 img, .articulo2 p{
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+.articulo2 img{
+    width: 30%;
+}
+
+.articulo2 p{
+    width: 67%
+}

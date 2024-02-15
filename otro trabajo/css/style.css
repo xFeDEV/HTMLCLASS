@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+section{
+    border: 2px solid black;
+    margin: 1em;
+    padding: 2em;
+}
+
+.izquierdo{
+    /* border: 2px solid red; */
+    width: 40%;
+    margin-left: 3em;
+}
+.izquierdo p{
+    margin: 2em 0;
+}
+
+.izquierdo h2{
+    margin-bottom: 1em;
+}
+div{
+    margin: 2em 0;
+}
+div img{
+    width: 30%;
+}
+
+div p{
+    width: 40%;
+}
+div img, div p{
+    margin: 0 2em;
+    display: inline-block;
+}
+
+article{
+    display: inline-block;
+
+}
+
+.texto{
+    margin-left: 2em;
+    width: 40%;
+    margin-bottom: 2em;
+}
+
+.derecha img{
+    margin-top: 3em;
+    width: 50%;
+}
+
+.derecha{
+    margin-left: 4em;
+width: 45%;
+vertical-align: top;
+}
+
+.articulos{
+    display: inline-block;
+    margin: 0 0.5em;
+}
+
+.articulos img{
+    width: 100%;
+}
+
+.articulos{
+    width: 45%;
+    text-align: center;
+}
+
+.articulos h2{
+    margin-top: 1em;
+}
