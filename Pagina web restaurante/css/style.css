@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    width: 100%;
+}
+
+/* INCIO DE SECCION 1 */
+.contenedor-1 {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/banner_1.png);
+    background-position: center;
+}
+
+.cabecera {
+
+    background-color: #FFFF;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    overflow: hidden;
+}
+
+.logo {
+    width: 20%;
+    padding: 3em 4em;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.navegacion {
+    width: 80%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right: 4em;
+}
+
+.link {
+    color: #fff;
+    padding: 4em 2em;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+.link:hover {
+    background-color: #F64B3C;
+    color: #fff;
+}
+
+.banner {
+    width: 100%;
+    height: calc(100vh - 15vh);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.banner_textos {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 4em;
+    color: #fff;
+
+}
+
+.banner_textos h1 {
+    font-size: 5em
+}
+
+.banner_textos p {
+    font-size: 3em;
+    margin: 1em 0 3em 0;
+}
+
+.banner_textos a {
+    background-color: #F64B3C;
+    padding: 0.5em 0;
+    width: 50%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 2em;
+    color: #fff;
+    border-radius: 40px;
+}
+
+.banner_textos a:hover {
+    background-color: #fff;
+    color: #F64B3C;
+}
+
+/* FIN DE SECCION 1 */
+
+/* INICIO DE SECCION 2 */
+
+.contenedor-2 {
+    background-color: #F6EEDF;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #F64B3C;
+}
+
+.text {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.text h2{
+    font-size: 40px;
+}
+
+.text p{
+    margin: 1em;
+    font-size:23px;
+
+}
+
+.fotos {
+    margin-top: 5em;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.foto_img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.foto_img img {
+    border-radius: 13px;
+}
+
+
+.foto_img h3{
+    margin-top: 1em;
+}
+
+.foto_img p{
+    margin-top: 0.5em;
+}
+
+
+
+/* FIN DE SECCION 2 */

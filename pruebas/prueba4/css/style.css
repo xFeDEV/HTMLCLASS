@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url(../img/carousel-1.jpg);
+}
+
+header{
+display: flex;
+flex-direction: row;
+}
+
+.logo{
+    font-size: 4em;
+    margin: 12px 30px;
+    color: white;
+}
+
+
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    font-size: 29px;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+    padding: 30px;
+}
+
+nav a:hover{
+    background-color: white;
+    color: black;
+}
+
+.titulo{
+    margin-top: 15%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+}
+
