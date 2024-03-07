@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    padding: 1em;
+    width: 100%;
+    text-align: center;
+}
+
+header i{
+    font-size: 50px;
+    color: gray;
+}
+
+.portada{
+    display: flex;
+    flex-direction: row;
+}
+
+.izquierda{
+    width:  40%;
+    padding-top: 15em;
+}
+.derecha{
+    display: flex;
+    width: 60%;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.derecha img{
+    max-width: 100%;
+}
+
+.izquierda h2{
+    font-size: 30px;
+    margin-left: 3em;
+    margin-bottom: 1em;
+}
+
+.izquierda h1{
+    font-size: 60px;
+    margin-left: 1.5em;
+    margin-bottom: 1em;
+}
+.izquierda p{
+    margin-left: 5em;
+    margin-bottom: 5em;
+}
+
+
+.izquierda  a {
+    margin-left: 8em;
+    text-decoration: none;
+    padding: 1em 2em;
+    background-color: red;
+    border-radius: 15px;
+    color: white;
+}
+
+
+.izquierda  a:hover {
+    background-color: white;
+    color: red;
+ }
+
+.tarjetas6{
+    width: 100%;
+    height: 70vh;
+    background-color: #EFCDCC;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+}
+
+.f1_3c{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.caja{
+    margin: 2em;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 5em 0em;
+}
+
+.caja h2{
+    margin-bottom: 1em;
+    color: #EFCDCC;
+}
+
+
+.f2_3c{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.mujer{
+    width: 70%;
+}
+
+.izquierda4{
+    width: 50%;
+}
+
+.derecha4{
+    width: 50%;
+}
+
+.cuatroparts{
+    display: flex;
+    flex-direction: row;
+    margin: 3em;
+}
+.izquierda4 div{
+    width: 70%;
+}
+
+.texto h2{
+    margin-bottom: 2em;
+}
+
+
+.texto p{
+    margin-bottom: 1em;
+}
+
+#ultimo{
+    margin-bottom: 4em;
+}
+
+.texto a{
+    background: #EFCDCC;
+    padding: 1em 2em;
+    border-radius: 15px;
+}
