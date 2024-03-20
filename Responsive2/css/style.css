@@ -23,7 +23,7 @@ nav a {
     padding: 1em;
     color: #54898b;
     text-decoration: none;
-    font-size: 1.5em;
+    font-size: 2em;
     font-family: "Rambla", sans-serif;
     font-weight: 700;
     font-style: normal;
@@ -52,7 +52,7 @@ nav a:hover {
     width: 22em;
 }
 
-.text{
+.text {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -68,34 +68,35 @@ nav a:hover {
     justify-content: center;
 }
 
-.hexa_icons{
+.hexa_icons {
     display: flex;
     flex-direction: row;
-    margin-top: 2%;
+    margin-top: 5%;
 }
 
-.triple_hexa{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 50%;
-}
-
-.triple_hexa img{
-    width: 23%;
-}
-
-.triple2_hexa{
+.triple_hexa {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     width: 50%;
 }
 
-.triple2_hexa img{
+.triple_hexa img {
     width: 23%;
 }
-.hexa_text{
+
+.triple2_hexa {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 50%;
+}
+
+.triple2_hexa img {
+    width: 23%;
+}
+
+.hexa_text {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -106,15 +107,190 @@ nav a:hover {
     font-family: "Rambla", sans-serif;
     font-weight: 200;
     font-style: normal;
-    margin-top: 10px;
+    margin-top: 1em;
+}
+
+.circle {
+    width: 3em;
+    height: 3em;
+    background-color: #54898b;
+    border-radius: 50%;
+}
+
+.title h2 {
+    color: #54898b;
+    text-decoration: none;
+    font-size: 5em;
+    font-family: "Rambla", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.title {
+    margin-top: 4%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.seccion2 p {
+    padding-top: 2em;
+    padding-bottom: 4em;
+    width: 70%;
+    color: #54898b;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-family: "Rambla", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: auto;
+    text-align: center;
+}
+
+.seccion2 {
+    width: 100%;
+}
+
+.seccion3 {
+    width: 100%;
+    background-color: #b3bdbe;
+    text-align: center;
+    padding: 5em 0;
+}
+
+.img_text img {
+    width: 6em;
+}
+
+.img_text {
+    padding: 1em;
+    width: 28%;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-family: "Rambla", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.img_text h4 {
+    margin-top: 1em;
 }
 
 
-@media screen and (max-width: 800px){
+.seccion4 {
+    padding: 5em 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.hexa_titles {
+    width: 30%;
+    padding: 2em;
+    text-align: center;
+}
+
+.hexa_titles p {
+    margin-top: 2em;
+    color: #54898b;
+    font-family: "Rambla", sans-serif;
+}
+
+/* el tamaño de la imagen junto con su texto central se determina con el contenedo */
+.contenedor {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 70%;
+}
+
+.contenedor img {
+    width: 100%;
+}
+
+.centrado {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-decoration: none;
+    font-size: 2em;
+    font-family: "Rambla", sans-serif;
+    font-style: normal;
+}
+
+.seccion5 {
+    width: 100%;
+    background-color: #b38f8f;
+}
+
+.title2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 5em;
+}
+
+.circle2 {
+    width: 2em;
+    height: 2em;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.title2 h2 {
+    color: white;
+    font-size: 5em;
+    font-family: "Rambla", sans-serif;
+
+}
+
+
+.circle_text {
+    padding-top: 2em;
+    color: white;
+    text-align: center;
+    margin: auto;
+    width: 70%;
+}
+
+
+.conteiner_user{
+    display: flex;
+    justify-content: center;
+}
+
+.white_user{
+    width: 30%;
+    padding: 3em;
+    display: inline-block;
+}
+
+.white_user p{
+    text-align: center;
+    padding-top: 3em;
+    color: white;
+}
+
+.white_user img{
+    width: 100%;
+}
+
+
+
+
+@media screen and (max-width: 800px) {
 
     .seccion1 {
         height: 80vh;
     }
+
     nav {
         width: 100%;
         display: flex;
@@ -124,10 +300,11 @@ nav a:hover {
         text-align: center;
     }
 
-    nav a{
+    nav a {
         padding: 10px;
         font-size: 1.3em;
         margin-right: 2em;
+        text-align: center;
     }
 
     #hexagono {
@@ -138,27 +315,103 @@ nav a:hover {
         text-align: center;
         width: 15em;
     }
-    .text{
+
+    .text {
         font-size: 1.3em;
     }
 
 
-    .hexa_icons{
+    .hexa_icons {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
 
-    .hexa_text{
+    .hexa_text {
         display: none;
     }
-    .triple_hexa img{
+
+    .triple_hexa img {
         width: 40%;
         padding: 1em;
     }
-    .triple2_hexa img{
+
+    .triple2_hexa img {
         width: 40%;
         padding: 1em;
     }
+
+
+    .circle {
+        font-size: 50%;
     }
+
+    .title h2 {
+        font-size: 3em;
+    }
+
+    .seccion2 p {
+        width: 90%;
+    }
+
+    .img_text {
+        width: 45%;
+        font-size: 1em;
+        padding: 0.5em;
+        padding-bottom: 1em;
+    }
+
+    .seccion4 {
+        padding: 3em 0;
+        display: inline-block;
+        justify-content: center;
+        text-align: center;
+
+    }
+
+    .hexa_titles {
+        display: inline-block;
+        width: 40%;
+        padding: 0;
+        margin: 1em;
+        justify-content: center;
+        text-align: center;
+
+    }
+
+    .hexa_titles p {
+        display: none;
+    }
+
+    .contenedor {
+        width: 100%;
+    }
+
+
+    .conteiner_user{
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .white_user{
+        width: 41%;
+        padding: 2em 1em;
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .white_user p{
+        text-align: center;
+        padding-top: 3em;
+        color: white;
+    }
+    
+    .white_user img{
+        width: 100%;
+    }
+}
