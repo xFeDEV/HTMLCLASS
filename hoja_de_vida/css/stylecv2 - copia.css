@@ -1,0 +1,148 @@
+* {
+    font-family: 'Sixtyfour', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#opcines_nav {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    background-color: black;
+    color: white;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 4em;
+    padding-right: 1em;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+nav ul li a:hover {
+    background-color: aqua;
+}
+
+#card {
+    text-align: center;
+    background-image: url(../img/fondo.jpg);
+    background-size: 100%;
+    padding-top: 10em;
+    padding-bottom: 5em;
+    color: blue;
+
+}
+
+#mifoto {
+    width: 12em;
+    height: 12em;
+    border-radius: 10em;
+    border: 3px blue solid;
+}
+
+#descripcion {
+    padding-top: 2em;
+}
+
+.name {
+    background-color: rgba(0, 255, 255, 0.192);
+    width: 45%;
+    padding: 0.5em;
+    height: auto;
+    margin: auto;
+}
+
+.mail {
+    background-color: rgba(0, 255, 255, 0.192);
+    width: 43%;
+    padding: 1em;
+    margin: 2em auto;
+}
+
+.tel {
+    background-color: rgba(0, 255, 255, 0.192);
+    width: 30%;
+    padding: 1em;
+    margin: 2em auto;
+}
+
+#experiencia1{
+    max-width: 100%;
+}
+
+#experiencia2{
+    max-width: 100%;
+    padding: 7em 0;
+}
+
+section {
+    /* box-shadow: 0px 0px 4px 2px black; */
+    width: 70%;
+    margin: 2em auto;
+    padding: 1em;
+}
+
+p{
+    margin: 2em;
+}
+
+section h2 {
+    color: blue;
+    text-shadow: 3px 3px 5px black;
+    margin: 1em 0;
+}
+#perfil{
+    padding-top: 3.5em;
+}
+
+#Experiencia{
+    padding-top: 3.5em;
+}
+
+.boton1, .boton2, .boton3, .boton4 {
+    padding: 0.5em 2em;
+    border: 1px black solid;
+    border-radius: 30px;
+    text-decoration: none;
+    color: blue;
+}   
+
+.boton1:hover, .boton2:hover, .boton3:hover, .boton4:hover {
+    background-color: blue;
+    color: black;
+}
+#caja_bonotes{
+    margin: 1em 2em;
+    display: inline-block;
+}
+
+article{
+    /* box-shadow: 0px 0px 4px 2px black; */
+    width: 40%;
+    margin: 1em auto;
+    display: inline-block;
+    padding: 1em;
+    vertical-align: top;   
+}   
+
+#habi  {
+    margin: 4% 0;
+    display: inline-flex;
+    width: 30%;
+    vertical-align: top;
+
+}
+#logohtml{
+    width: 20%;
+}
+
+#texto{
+    font-size: 0.8em;
+}
