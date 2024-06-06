@@ -10890,16 +10890,16 @@ html {
 header.masthead {
   position: relative;
   overflow: hidden;
-  padding-top: calc(7rem + 72px);
+  padding-top: calc(50rem + 72px);
   padding-bottom: 7rem;
-  background: linear-gradient(0deg, #ff6a00 0%, #ee0979 100%);
+  background: linear-gradient(0deg, #ff6a00 4%, #ee0979 100%);
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: scroll;
   background-size: cover;
 }
 header.masthead .masthead-content {
-  z-index: 1;
+  z-index: 3;
   position: relative;
 }
 header.masthead .masthead-content .masthead-heading {
@@ -10915,9 +10915,9 @@ header.masthead .bg-circle {
   background: linear-gradient(0deg, #ee0979 0%, #ff6a00 100%);
 }
 header.masthead .bg-circle-1 {
-  height: 90rem;
+  height: 120rem;
   width: 90rem;
-  bottom: -55rem;
+  bottom: -10rem;
   left: -55rem;
 }
 header.masthead .bg-circle-2 {

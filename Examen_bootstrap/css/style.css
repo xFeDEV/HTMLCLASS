@@ -1,0 +1,50 @@
+.head-master{
+    background-image: url(../img/fondoportada.jfif);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 970px;
+}
+
+
+.btn-primary{
+    border: 2px blueviolet solid;
+    background-color: blueviolet;
+    color: white;
+}
+
+.cielo{
+    background-color: rgb(149, 189, 215);
+}
+ul {
+    list-style: none;
+}
+
+.precio{
+    font-size: 4em;
+    color: blueviolet;
+    font-weight: bold;
+}
+
+.peso{
+    font-size: 2.5em;
+    color: blueviolet;
+    font-weight: bold;
+}
+.carta-titulo{
+    background-color: rgb(133, 107, 194);
+    font-size: 3em;
+    color: white;
+}
+
+.carta-titulo2{
+    background-color: rgb(241, 168, 13);
+    font-size: 3em;
+    color: white;
+}
+
+.carta-titulo3{
+    background-color: rgb(149, 189, 216);
+    font-size: 3em;
+    color: white;
+}
