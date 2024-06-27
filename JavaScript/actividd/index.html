@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Total credito</h1>
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="precio" placeholder="Precio moto">
+                    <label for="floatingInput">Precio moto</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="interes" placeholder="Tasa interes">
+                    <label for="floatingInput">Tasa de interes</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="cuotas" placeholder="Cuotas">
+                    <label for="floatingInput">Cuotas</label>
+                </div>
+                <button onclick="calcular()" class="btn btn-success">Calcular</button>
+
+
+            </div>
+            <div class="col align-self-center">
+                <div class="resultado">
+                    <p>Valor interes mensual: </p>
+                    <div id="precio_total" class="mostrar"></div>
+                </div>
+                <div class="resultado">
+                    <p>Valor a pagar mensual: </p>
+                    <div id="valor_mensual" class="mostrar"></div>
+                </div>
+                <div class="resultado">
+                    <p>Valor total a pagar: </p>
+                    <div id="total_pagar" class="mostrar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="mb-3 row">
+                    <label for="inputPassword" class="col-sm-3 col-form-label">Nombre producto</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="nombre_producto">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="inputPassword" class="col-sm-3 col-form-label">Precio Unitario</label>
+                    <div class="col-sm-9">
+                        <input type="number" class="form-control" id="precio_unitario">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="inputPassword" class="col-sm-3 col-form-label">Cantidad</label>
+                    <div class="col-sm-9">
+                        <input type="number" class="form-control" id="cantidad">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="inputPassword" class="col-sm-3 col-form-label">Tiene descuento?</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="op_descuento">
+                    </div>
+                </div>
+                <button onclick="descuento()" class="btn btn-success">Calcular</button>
+            </div>
+            <div class="col align-self-center" id="resultado">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+              <label for="inputPassword6" class="col-form-label">Cuantos numeros desea ingresar?</label>
+            </div>
+            <div class="col-auto">
+              <input type="number" id="casillas" class="form-control" aria-describedby="passwordHelpInline">
+            </div>
+            <button onclick="numeros()" class="btn btn-success col-auto"> enviar!</button>
+            <div class="col-auto">
+              <span id="passwordHelpInline" class="form-text">
+                Maximo 10!
+              </span>
+            </div>
+          </div>
+          <div id="casillas_generadas" class="mt-3 row">
+
+          </div>
+
+    </div>
+
+
+
+
+    <script src="js/otrocodigo.js"></script>
+</body>
+
+</html>
