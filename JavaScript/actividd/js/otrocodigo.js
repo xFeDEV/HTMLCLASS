@@ -35,18 +35,30 @@ function descuento(){
 function numeros(){
     let casillas = parseInt(document.getElementById("casillas").value);
     const casillas_generadas = document.getElementById("casillas_generadas");
+    const div_promedio = document.getElementById("promedio");
+    div_promedio.innerHTML= "";
     let mostrar = "";
     if(casillas > 10 || casillas < 1){
-        mostrar += "<h4>NUMERO FUERA DE RANGO INTENTE DE NUEVO</h4>"
+        mostrar = "<p> NUMERO FUERA DE RANGO INTENTE DE NUEVO </p>";
     }else{
         for(let i = 1; i<=casillas; i++){
-            mostrar += "<input type='number' class='col-1 m-2' id='"+i+"'>"
+            mostrar += "<input type='number' class='m-2 col' id='"+i+"'>";
         }
-        casillas_generadas.innerHTML = mostrar;
-        
+        mostrar += "<button type='button' onclick='calcular_promedio("+casillas+")' class='btn btn-success mt-2'>Calcular</button>";
     }
+    casillas_generadas.innerHTML = mostrar;
+}
 
-    
+function calcular_promedio(casillas){
+    const div_promedio = document.getElementById("promedio");
+    let num = 0;
+    let agregar = "";
+    for(let i = 1; i<=casillas; i++){
+        num += parseInt(document.getElementById(i).value);
+    }
+    agregar += "<p class='mt-2' >Total: "+num +"</p>";
+    agregar += "<p>Promedio: "+(num/casillas)+"</p>";
+    div_promedio.innerHTML = agregar;
 }
 
 
