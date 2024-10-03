@@ -1,0 +1,9 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
+    margin: 0; /* Elimina el margen predeterminado */
+}

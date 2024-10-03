@@ -16,8 +16,7 @@
             <input type="submit" name="submit" value="Enviar">
         </form>
     <?php        
-    }elseif(isset($_REQUEST['num'])){
-
+    }elseif(isset($_REQUEST['num'])){ // valida si el dato request tiene algo dentro
     ?>
     <form action="" method="POST">
         <?php
@@ -30,7 +29,7 @@
             <select name="ocupacion[]" id="">
                 <option value="ing">ING</option>
                 <option value="tec">TEC</option>
-            </select>
+            </select>.0.0
             <br>
             <?php
         }
@@ -65,9 +64,9 @@
             echo "Ocupacion: ", $rangos[$empleados-1], "<br>";
             echo "Horas ordinales: ", $hora, "<br>";
             echo "Horas extras: ", $horas_extra, "<br>";
-            echo "Sueldo por horas ordinales: ", ($sueldo_hora * $hora), "<br>";
-            echo "Sueldo por horas extras: ", ($sueldo_hora_extra*$horas_extra), "<br>";
-            echo "Sueldo: ", ($sueldo_hora * $hora) + ($sueldo_hora_extra*$horas_extra), "<br>";
+            echo "Sueldo por horas ordinales: ", round($sueldo_hora * $hora), "<br>";
+            echo "Sueldo por horas extras: ", round($sueldo_hora_extra*$horas_extra), "<br>";
+            echo "Sueldo: ", round(($sueldo_hora * $hora) + ($sueldo_hora_extra*$horas_extra)), "<br>";
         }
     }
     ?>

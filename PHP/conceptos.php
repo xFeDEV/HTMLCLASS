@@ -17,6 +17,7 @@
         </form>
     <?php
 
+
     }elseif(isset($_REQUEST['num'])){
         
     ?>
@@ -24,15 +25,15 @@
         <?php
             $numero =$_REQUEST['num'];
             for($i=0;$i<$numero;$i++){
-            ?>
-            Ingrese la cantidad de kilos del cliente <?php echo $i;?>;
-            <input type="number" name="cantidad[]" value="">
-            <br>
-            <?php
-        }
         ?>
-        <input type="submit" value="enviar">
-        </form>
+                Ingrese la cantidad de kilos del cliente <?php echo $i;?>;
+                <input type="number" name="cantidad[]" value="">
+                <br>
+        <?php
+            }
+        ?>
+            <input type="submit" value="enviar">
+            </form>
         <?php
     }else{
         $acum = 0;
@@ -47,7 +48,6 @@
                 echo "no tiene descuento";
             }
             $acum = $acum+$total;
-
         }
         echo $acum;
         }
