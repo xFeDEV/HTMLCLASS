@@ -1,0 +1,10 @@
+html, body {
+    background-color: #152733;
+    overflow: hidden;
+    color: #6c757d;
+}
+
+.caja{
+    border: 5px solid #6c757d;
+    border-radius: 20px;
+}

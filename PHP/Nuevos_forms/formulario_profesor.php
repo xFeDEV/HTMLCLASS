@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="forms.css">
-    <title>Estudiantes</title>
+    <title>Formulario profesores</title>
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="menu.php">Colegio</a>
+        <a class="navbar-brand" href="#">Colegio</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -64,64 +64,56 @@
 </nav>
 
 
+
 <div class="form-body">
         <div class="row">
             <div class="form-holder">
                 <div class="form-content">
                     <div class="form-items">
-                        <h3>Registro estudiantes</h3>
-                        <p>Llena todos los campos para registrar estudiante</p>
-                        <form class="requires-validation" action="ingresar_estudiante.php" method="POST" novalidate>
+                        <h3>Registro profesor</h3>
+                        <p>Llena todos los campos para registrar profesor</p>
+                        <form class="requires-validation" action="ingresar_profesor.php" method="POST" novalidate>
+
                             <div class="col-md-12">
                                <input class="form-control" type="number" name="documento" placeholder="Documento" required>
                                <div class="valid-feedback">Datos correctas!</div>
-                               <div class="invalid-feedback">Este dato es necesisario para el registrar estudiantes</div>
+                               <div class="invalid-feedback">Este dato es necesisario para el registrar profesor</div>
                             </div>
 
                             <div class="col-md-12">
-                                <input class="form-control" type="text" name="nombre" placeholder="Nombre" required>
-                                 <div class="valid-feedback">Datos correctas!</div>
-                                 <div class="invalid-feedback">Este dato es necesisario para el registrar estudiantes</div>
+                               <input class="form-control" type="text" name="nombre" placeholder="Nombre" required>
+                               <div class="valid-feedback">Datos correctas!</div>
+                               <div class="invalid-feedback">Este dato es necesisario para el registrar profesor</div>
                             </div>
 
                             <div class="col-md-12">
                                 <input class="form-control" type="text" name="apellido" placeholder="Apellido" required>
                                  <div class="valid-feedback">Datos correctas!</div>
-                                 <div class="invalid-feedback">Este dato es necesisario para el registrar estudiantes</div>
+                                 <div class="invalid-feedback">Este dato es necesisario para el registrar profesor</div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <input class="form-control" type="email" name="email" placeholder="Email" required>
+                                 <div class="valid-feedback">Datos correctas!</div>
+                                 <div class="invalid-feedback">Este dato es necesisario para el registrar profesor</div>
                             </div>
 
                            <div class="col-md-12">
-                              <input class="form-control" type="email" name="email" placeholder="Email" required>
+                              <input class="form-control" type="text" name="materia" placeholder="Materia" required>
                                <div class="valid-feedback">Datos correctas!</div>
-                               <div class="invalid-feedback">Este dato es necesisario para el registrar estudiantes</div>
+                               <div class="invalid-feedback">Este dato es necesisario para el registrar profesor</div>
+                           </div>
+
+
+                           <div class="col-md-12 mt-2">
+                                <label for="">Fecha contratacion: </label>
+                                <input class="form-control" type="date" name="contratacion" required>
+                               <div class="valid-feedback">Datos correctas!</div>
+                               <div class="invalid-feedback">Este dato es necesisario para el registrar profesor</div>
                            </div>
 
                            <div class="col-md-12 mt-3">
-                                <input class="form-control" type="number" name="edad" placeholder="Edad" required>    
-                                <div class="valid-feedback">Datos correctas!</div>
-                                <div class="invalid-feedback">Este dato es necesisario para el registrar estudiantes</div>
-                            </div>
-
-                            <div class="col-md-12 mt-3">
-                                <input class="form-control" type="number" name="nota1" step="0.0001" placeholder="Nota #1" required>    
-                                <div class="valid-feedback">Datos correctas!</div>
-                                <div class="invalid-feedback">Este dato es necesisario para el registrar estudiantes</div>
-                            </div>
-
-                            <div class="col-md-12 mt-3">
-                                <input class="form-control" type="number" name="nota2" step="0.0001" placeholder="Nota #2" required>    
-                                <div class="valid-feedback">Datos correctas!</div>
-                                <div class="invalid-feedback">Este dato es necesisario para el registrar estudiantes</div>
-                            </div>
-
-                            <div class="col-md-12 mt-3">
-                                <input class="form-control" type="number" name="nota3" step="0.0001" placeholder="Nota #3" required>    
-                                <div class="valid-feedback">Datos correctas!</div>
-                                <div class="invalid-feedback">Este dato es necesisario para el registrar estudiantes</div>
-                            </div>
-
-                           <div class="col-md-12 mt-3">
-                            <label class="mb-3 mr-1" for="gender">Gender: </label>
+                            <label class="mb-3 mr-1" for="gender">Genero: </label>
 
                             <input type="radio" class="btn-check" name="gender" value="hombre" id="hombre" autocomplete="off" required>
                             <label class="btn btn-sm btn-outline-secondary" for="hombre">Hombre</label>
@@ -136,7 +128,7 @@
                             </div>
                   
 
-                            <div class="form-button mt-3">
+                            <div class="form-button mt-4 d-flex justify-content-center">
                                 <button id="submit" type="submit" class="btn btn-primary">Registrar</button>
                             </div>
                         </form>

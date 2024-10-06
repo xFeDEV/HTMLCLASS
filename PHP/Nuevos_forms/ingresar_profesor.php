@@ -5,30 +5,21 @@ include_once('conexion_bd_estu.php');
 $documento = $_POST['documento'];
 $nombre = $_POST['nombre'];
 $apellido = $_POST['apellido'];
-$edad = $_POST['edad'];
 $email = $_POST['email'];
-$nota1 = $_POST['nota1'];
-$nota2 = $_POST['nota2'];
-$nota3 = $_POST['nota3'];
+$materia = $_POST['materia'];
+$fecha = $_POST['contratacion'];
 $genero = $_POST['gender'];
-$promedio = ($nota1 + $nota2 + $nota3)/3;
 
-if($promedio >= 3){
-    $estado = "aprobado";
-}else{
-    $estado = "reprobado";
-}
-
-$conexion->query("INSERT INTO estudiantes(documento, nombre, apellido, email, edad, genero, nota1, nota2, nota3, promedio, estado) 
-values ($documento, '$nombre', '$apellido', '$email', $edad, '$genero', $nota1, $nota2, $nota3, $promedio, '$estado')");
+$conexion->query("INSERT INTO profesores(documento, nombre, apellido, email, materia, fecha_contrato, genero) values ($documento, '$nombre', '$apellido', '$email', '$materia', '$fecha', '$genero')");
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabla Estudiantes</title>
+    <title>Tabla Profesores</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -59,7 +50,7 @@ values ($documento, '$nombre', '$apellido', '$email', $edad, '$genero', $nota1, 
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="formulario_profesor.php">REGISTRAR</a></li>
-                    <li><a class="dropdown-item" href="consultar_grupos.php">CONSULTAR</a></li>
+                    <li><a class="dropdown-item" href="consultar_profesores.php">CONSULTAR</a></li>
                 </ul>
             </li>
 
@@ -89,7 +80,7 @@ values ($documento, '$nombre', '$apellido', '$email', $edad, '$genero', $nota1, 
 </nav>
 
 
-    <h1 class="mt-5">Tabla estudiantes</h1>
+    <h1 class="mt-5">Tabla profesores</h1>
     <div class="container mt-5">
         <table class="table table-dark table-hover">
             <thead>
@@ -99,16 +90,16 @@ values ($documento, '$nombre', '$apellido', '$email', $edad, '$genero', $nota1, 
                     <th scope="col">Nombre</th>
                     <th scope="col">Apellido</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Edad</th>
-                    <th scope="col">Promedio</th>
-                    <th scope="col">Estado</th>
+                    <th scope="col">Materia</th>
+                    <th scope="col">Fecha Contrato</th>
+                    <th scope="col">Genero</th>
                 </tr>
         </thead>
         <tbody>
     <?php
     include_once('conexion_bd_estu.php');
 
-        $consulta = $conexion->query("SELECT * from estudiantes");
+        $consulta = $conexion->query("SELECT * from profesores");
 
         while($row=$consulta->fetch_array()){
 
@@ -117,18 +108,18 @@ values ($documento, '$nombre', '$apellido', '$email', $edad, '$genero', $nota1, 
             $nombre = $row['nombre'];
             $apellido = $row['apellido'];
             $email = $row['email'];
-            $edad = $row['edad'];
-            $promedio = $row['promedio'];
-            $estado = $row['estado'];
+            $materia = $row['materia'];
+            $fecha = $row['fecha_contrato'];
+            $genero = $row['genero'];
             echo "<tr>";
             echo '<th scope="row">',$id,'</th>';
             echo '<td>',$documento,'</td>';
             echo '<td>',$nombre,'</td>';
             echo '<td>',$apellido,'</td>';
             echo '<td>',$email,'</td>';
-            echo '<td>',$edad,'</td>';
-            echo '<td>',$promedio,'</td>';
-            echo '<td>',$estado,'</td>';
+            echo '<td>',$materia,'</td>';
+            echo '<td>',$fecha,'</td>';
+            echo '<td>',$genero,'</td>';
             echo ' </tr>';
         }
     ?>

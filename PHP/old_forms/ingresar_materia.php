@@ -7,7 +7,7 @@ $profesor = $_POST['profesor'];
 $grado = $_POST['grado'];
 $creditos = $_POST['creditos'];
 
-$conexion->query("INSERT INTO materias(nombre, profesor, grado, creditos) values ('$nombre_materia', '$profesor', $grado, $creditos)");
+$conexion->query("INSERT INTO materias(nombre, profesor, grado, creditos) values ('$nombre_materia', '$profesor', '$grado', $creditos)");
 
 echo "Materia registrada exitosamente"
 
