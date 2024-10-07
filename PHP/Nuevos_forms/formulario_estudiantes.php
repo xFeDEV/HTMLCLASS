@@ -134,7 +134,33 @@
                                <div class="valid-feedback mv-up">Genero seleccionado</div>
                                 <div class="invalid-feedback mv-up">Por favor seleccione un genero</div>
                             </div>
-                  
+
+                            <div class="col-md-12">
+                                <select class="form-select" aria-label="Grupo" name="grupo">
+                                    <option selected>Seleccione grupo</option>
+                                    <?php
+                                        include_once('conexion_bd_estu.php');
+                                        $consulta = $conexion->query("SELECT * FROM grupos");
+                                        while($row = $consulta->fetch_array()){
+                                            echo '<option value="',$row['nombre'],'">',$row['nombre'],'</option>';
+                                        }
+                                    ?>
+                                </select>
+                            </div>
+
+                            <div class="col-md-12">
+                                <select class="form-select" aria-label="Profesor" name="profesor">
+                                    <option selected>Seleccione profesor</option>
+                                    <?php
+                                        include_once('conexion_bd_estu.php');
+                                        $consulta = $conexion->query("SELECT * FROM profesores");
+                                        while($row = $consulta->fetch_array()){
+                                            echo '<option value="',$row['nombre'],'">',$row['nombre'],'</option>';
+                                        }
+                                    ?>
+                                </select>
+                            </div>
+
 
                             <div class="form-button mt-3">
                                 <button id="submit" type="submit" class="btn btn-primary">Registrar</button>
@@ -145,7 +171,7 @@
             </div>
         </div>
     </div>
-    
+
     <script src="forms.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
