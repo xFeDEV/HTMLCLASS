@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-10-2024 a las 19:50:28
+-- Tiempo de generación: 07-10-2024 a las 23:46:35
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -39,18 +39,22 @@ CREATE TABLE `estudiantes` (
   `nota2` float NOT NULL,
   `nota3` float NOT NULL,
   `promedio` float NOT NULL,
-  `estado` varchar(100) NOT NULL
+  `estado` varchar(100) NOT NULL,
+  `grupo` varchar(100) NOT NULL,
+  `profesor` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `estudiantes`
 --
 
-INSERT INTO `estudiantes` (`Id`, `documento`, `nombre`, `apellido`, `email`, `edad`, `genero`, `nota1`, `nota2`, `nota3`, `promedio`, `estado`) VALUES
-(1, 1004754391, 'Federico', 'Duque', 'fedelopdu@hotmail.com', 23, 'hombre', 4.5, 4.3, 5, 4.6, 'aprobado'),
-(2, 100564121, 'Bryan', 'Agudelo', 'Brtan@gmail.com', 19, 'on', 3, 4, 5, 4, 'aprobado'),
-(3, 10045132, 'Leandro', 'Sanchez', 'Leandro@leandro.com', 30, 'hombre', 5, 3, 3, 3.66667, 'aprobado'),
-(4, 12312452, 'Edison', 'Betancurt', 'Edi@Edi.com', 33, 'hombre', 4, 3, 5, 4, 'aprobado');
+INSERT INTO `estudiantes` (`Id`, `documento`, `nombre`, `apellido`, `email`, `edad`, `genero`, `nota1`, `nota2`, `nota3`, `promedio`, `estado`, `grupo`, `profesor`) VALUES
+(1, 1004754391, 'Federico', 'Duque', 'fedelopdu@hotmail.com', 23, 'hombre', 4.5, 4.3, 5, 4.6, 'aprobado', '', ''),
+(2, 100564121, 'Bryan', 'Agudelo', 'Brtan@gmail.com', 19, 'on', 3, 4, 5, 4, 'aprobado', '', ''),
+(3, 10045132, 'Leandro', 'Sanchez', 'Leandro@leandro.com', 30, 'hombre', 5, 3, 3, 3.66667, 'aprobado', '', ''),
+(4, 12312452, 'Edison', 'Betancurt', 'Edi@Edi.com', 33, 'hombre', 4, 3, 5, 4, 'aprobado', '', ''),
+(5, 1654651651, 'Maria', 'Lopez', 'maria@maria.com', 40, 'mujer', 5, 4, 4, 4.33333, 'aprobado', '', ''),
+(6, 14551, 'peter', 'parker', 'peter@parker.com', 22, 'secreto', 4, 5, 3, 4, 'aprobado', 'ADSO-2135', 'Felipe ');
 
 -- --------------------------------------------------------
 
@@ -73,7 +77,9 @@ CREATE TABLE `grupos` (
 INSERT INTO `grupos` (`Id`, `nombre`, `ano_escolar`, `grado`, `jefe_grupo`) VALUES
 (1, 'ADSO-2847', 2023, 'once', 'Legarda'),
 (2, 'ADSO-2135', 2033, 'noveno', 'Anderson'),
-(3, 'ADSO-2135', 2033, 'noveno', 'Anderson');
+(3, 'ADSO-2135', 2033, 'noveno', 'Anderson'),
+(4, 'ADSO-BRYAN', 2024, 'decimo', 'Bryan CArdona'),
+(5, 'ADSO-MALO', 2022, 'decimo', 'Felipe');
 
 -- --------------------------------------------------------
 
@@ -161,13 +167,13 @@ ALTER TABLE `profesores`
 -- AUTO_INCREMENT de la tabla `estudiantes`
 --
 ALTER TABLE `estudiantes`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `grupos`
 --
 ALTER TABLE `grupos`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `materias`
