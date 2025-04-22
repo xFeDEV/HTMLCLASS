@@ -140,6 +140,59 @@ SELECT CURRENT_TIMESTAMP AS fecha_y_hora_actual;
 
     SELECT DATE_FORMAT('2011-02-31', '%d/%m/%Y') AS fecha_formateada;
 
+    -- T04.009- Pedidos	realizados	el	13.9.2010	(este	formato,	obligatorio	en	la	comparación)--
+    SELECT usuario, fecha 
+    FROM pedido 
+    WHERE fecha = STR_TO_DATE('13.9.2010', '%d.%m.%Y');
+
+    -- T04.010- Numero	y	fecha	de	los	pedidos	realizados	el	13.9.2010	(este	formato,	obligatorio	 tanto	en	la	comparación	como	en	la	salida). --
+    SELECT numPedido, DATE_FORMAT(fecha, '%d.%m.%Y') AS fecha_formateada FROM pedido WHERE fecha = STR_TO_DATE('13.9.2010', '%d.%m.%Y');
+
+    -- T04.011- Numero,	fecha,	y	email	de	cliente	de	los	pedidos	(formato	dd.mm.aa)	ordenado Descendente	por	fecha	y	ascendentemente	por	cliente. --
+    SELECT numPedido, usuario, DATE_FORMAT(fecha, '%d.%m.%Y') as fecha_formato FROM pedido ORDER BY fecha DESC, usuario ASC;
+    
+
+    -- T04.012- Códigos	de	artículos	solicitados	en	2010,	eliminando	duplicados	y	ordenado	ascendentemente. --
+    SELECT DISTINCT articulo
+FROM linped INNER JOIN pedido ON pedido.numPedido = linped.numPedido WHERE fecha BETWEEN '2010-01-01' AND '2010-12-31' 
+ORDER BY articulo ASC;
+    -- T04.013- Códigos	de	artículos	solicitados	en	pedidos	de	marzo	de	2010,	eliminando	duplicados	y	ordenado	ascendentemente.--
+    SELECT DISTINCT articulo FROM linped INNER JOIN pedido ON pedido.numPedido = linped.numPedido WHERE fecha BETWEEN '2010-03-01' AND '2010-03-31' ORDER BY articulo ASC;
+
+    -- T04.014- Códigos	de	artículos	solicitados	en	pedidos	de	septiembre	de	2010,	y	semana	del	 .año	(la	semana	comienza	en	lunes)	y	año	del	pedido,	ordenado	por	semana --
+    SELECT articulo, WEEK(fecha, 1) as semana_pedido, YEAR(fecha) as ano_pedido FROM linped INNER JOIN pedido ON linped.numPedido = pedido.numPedido WHERE fecha BETWEEN '2010-09-01' and '2010-09-31' ORDER BY semana_pedido ASC;
+
+    -- T04.015- Nombre,	apellidos	y	edad	(aproximada)	de	los	usuarios	del	dominio	"dlsi.ua.es", ordenado	descendentemente	por	edad.--
+    SELECT nombre, apellidos, YEAR(CURDATE()) - YEAR(fechaNac) as edad FROM usuario WHERE email LIKE '%dlsi.ua.es%' ORDER BY edad DESC;
+
+    -- T04.016- Email	y	cantidad	de	días	que	han	pasado	desde	los	pedidos	realizados	por	cada	usuario	hasta la	fecha	de	cada	cesta	que	también	sea	suya.	Eliminad	duplicados.--
+    SELECT DISTINCT cesta.usuario, DATEDIFF(cesta.fecha, pedido.fecha) as difencia_dias FROM linped INNER JOIN cesta ON cesta.articulo = linped.articulo  INNER JOIN pedido ON pedido.numPedido = linped.numPedido;
+
+    -- T04.017- Información	sobre	los	usuarios	menores	de	25	años.--
+    SELECT * FROM usuario WHERE YEAR(CURDATE()) - YEAR(fechaNac) < 25;
+
+    -- T04.018- Número	de	pedido,	usuario	y	fecha	(dd/mm/aaaa)	al	que	se	le	solicitó	para	los	 pedidos	que	se	realizaron	durante	la	semana	del	7	de	noviembre	de	2010. --
+    SELECT numPedido, usuario, DATE_FORMAT(fecha, '%d/%m/%Y') as fecha_formato FROM pedido WHERE WEEK(fecha, 1) = 45 AND YEAR(fecha) = 2010 ORDER BY fecha ASC;
+
+    -- T04.019- Código,	nombre,	panel	y	pantalla	de	los	televisores	que	no	se	hayan	solicitado	ni	 en	lo	que	va	de	año,	ni	en	los	últimos	seis	meses	del	año	pasado.--
+    SELECT tv.cod, articulo.nombre, tv.panel, tv.pantalla FROM tv INNER JOIN articulo ON articulo.cod = tv.cod WHERE tv.cod NOT IN (SELECT linped.articulo FROM linped INNER JOIN pedido ON pedido.numPedido = linped.numPedido WHERE YEAR(fecha) = 2010 OR fecha BETWEEN '2010-01-01' AND '2010-06-30') ORDER BY `tv`.`cod` ASC;
+    -- T04.020- Email	y	cantidad	de	días	que	han	pasado	desde	los	pedidos	realizados	por	cada	usuario	hasta	la	fecha	de	cada	artículo	que	ahora	mismo	hay	en	su	cesta.	Eliminad duplicados.--
+    SELECT DISTINCT cesta.usuario, DATEDIFF(cesta.fecha, articulo.fecha) as diferencia_dias FROM linped INNER JOIN cesta ON cesta.articulo = linped.articulo INNER JOIN articulo ON articulo.cod = linped.articulo;
+    -- T05.001- Número	de	pedido	e	identificador,	apellidos	y	nombre	del	usuario	que	realiza	el	pedido	(usando	join).--
+    SELECT numPedido, usuario.nombre, usuario.apellidos, usuario.dni, usuario.telefono FROM pedido INNER JOIN usuario ON usuario.email = pedido.usuario;
+    -- T05.002- Número	de	pedido	e	identificador,	apellidos	y	nombre	del	usuario	que	realiza	el	 pedido,	y	nombre	de	la	localidad	del	usuario	(usando	join). --
+    
+
+
+
+
+
+
+
+
+
+
+
 
 
 
