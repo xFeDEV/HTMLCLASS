@@ -178,9 +178,17 @@ ORDER BY articulo ASC;
     SELECT tv.cod, articulo.nombre, tv.panel, tv.pantalla FROM tv INNER JOIN articulo ON articulo.cod = tv.cod WHERE tv.cod NOT IN (SELECT linped.articulo FROM linped INNER JOIN pedido ON pedido.numPedido = linped.numPedido WHERE YEAR(fecha) = 2010 OR fecha BETWEEN '2010-01-01' AND '2010-06-30') ORDER BY `tv`.`cod` ASC;
     -- T04.020- Email	y	cantidad	de	días	que	han	pasado	desde	los	pedidos	realizados	por	cada	usuario	hasta	la	fecha	de	cada	artículo	que	ahora	mismo	hay	en	su	cesta.	Eliminad duplicados.--
     SELECT DISTINCT cesta.usuario, DATEDIFF(cesta.fecha, articulo.fecha) as diferencia_dias FROM linped INNER JOIN cesta ON cesta.articulo = linped.articulo INNER JOIN articulo ON articulo.cod = linped.articulo;
+
     -- T05.001- Número	de	pedido	e	identificador,	apellidos	y	nombre	del	usuario	que	realiza	el	pedido	(usando	join).--
+
     SELECT numPedido, usuario.nombre, usuario.apellidos, usuario.dni, usuario.telefono FROM pedido INNER JOIN usuario ON usuario.email = pedido.usuario;
-    -- T05.002- Número	de	pedido	e	identificador,	apellidos	y	nombre	del	usuario	que	realiza	el	 pedido,	y	nombre	de	la	localidad	del	usuario	(usando	join). --
+
+    -- T05.002- Número	de	pedido	e	identificador,	apellidos	y	nombre	del	usuario	que	realiza	el	 pedido,	y	nombre	de	la	localidad	del	usuario	(usando	join).--
+    
+    
+
+
+
     
 
 
