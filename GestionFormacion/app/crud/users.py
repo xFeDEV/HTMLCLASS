@@ -96,3 +96,32 @@ def deactivate_user(db: Session, user_id: int) -> bool:
         db.rollback()
         logger.error(f"Error al desactivar usuario: {e}")
         raise Exception("Error de base de datos al desactivar el usuario")
+
+
+def modify_status_user(db: Session, user_id: int) -> bool:
+    try:
+        # Obtener el estado actual
+        query_select = text("""
+            SELECT estado FROM usuario WHERE id_usuario = :user_id
+        """)
+        result = db.execute(query_select, {"user_id": user_id}).first()
+        if result is None:
+            logger.warning(f"Usuario no encontrado con id: {user_id}")
+            return False
+
+        estado_actual = result[0]
+        nuevo_estado = not estado_actual
+
+        # Actualizar el estado
+        query_update = text("""
+            UPDATE usuario
+            SET estado = :nuevo_estado
+            WHERE id_usuario = :user_id
+        """)
+        db.execute(query_update, {"nuevo_estado": nuevo_estado, "user_id": user_id})
+        db.commit()
+        return True
+    except SQLAlchemyError as e:
+        db.rollback()
+        logger.error(f"Error al modificar el estado del usuario: {e}")
+        raise Exception("Error de base de datos al modificar el estado del usuario")

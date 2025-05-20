@@ -487,9 +487,9 @@ async def verify_token(token: str):
 
 
 
-## 6. Dependencias y autenticación
+## 8. Dependencias y autenticación
 
-### 6.1. Crear dependencias para autenticación (app/api/dependencies.py)
+### 8.1. Crear dependencias para autenticación (app/api/dependencies.py)
 
 from fastapi import Depends, HTTPException
 from sqlalchemy.orm import Session
@@ -525,9 +525,9 @@ def authenticate_user(username: str, password: str, db: Session):
     return user
 
 
-## 7. Endpoints auth
+## 9. Endpoints auth
 
-### 7.1. Endpoint de autenticación (app/api/auth.py)
+### 9.1. Endpoint de autenticación (app/api/auth.py)
 
 from typing import Annotated
 from fastapi import APIRouter, Depends,HTTPException

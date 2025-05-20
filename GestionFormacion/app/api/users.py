@@ -54,3 +54,12 @@ def update_user(user_id: int, user: UserUpdate, db: Session = Depends(get_db)):
     except SQLAlchemyError as e:
         raise HTTPException(status_code=500, detail=str(e))
     
+@router.put("/modify-status/{user_id}")
+def modify_status(user_id: int, db: Session = Depends(get_db)):
+    try:
+        success = crud_users.modify_status_user(db, user_id)
+        if not success:
+            raise HTTPException(status_code=404, detail="Usuario no encontrado")
+        return {"message": "Estado del usuario modificado correctamente"}
+    except SQLAlchemyError as e:
+        raise HTTPException(status_code=500, detail=str(e))        

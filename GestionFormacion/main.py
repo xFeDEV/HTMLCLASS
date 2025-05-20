@@ -6,6 +6,8 @@ app = FastAPI()
 
 # Incluir en el objeto app los routers
 app.include_router(users.router, prefix="/users", tags=["users"])
+app.include_router(users.router, prefix="/access", tags=["login"])
+# Incluir en el objeto app los routers
 
 # Configuración de CORS para permitir todas las solicitudes desde cualquier origen
 app.add_middleware(
