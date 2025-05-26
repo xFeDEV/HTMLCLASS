@@ -1,9 +1,8 @@
 from sqlalchemy.orm import Session
 from sqlalchemy import text
+from sqlalchemy.exc import SQLAlchemyError
 from typing import Optional
 import logging
-from sqlalchemy.exc import SQLAlchemyError
-
 from app.schemas.users import UserCreate, UserUpdate
 from core.security import get_hashed_password
 
@@ -35,35 +34,33 @@ def create_user(db: Session, user: UserCreate) -> Optional[bool]:
 
 def get_user_by_email(db: Session, email: str):
     try:
-        query = text("""SELECT id_usuario, nombre_completo, identificacion, id_rol,
-                                correo, tipo_contrato,
+        query = text("""SELECT  id_usuario, nombre_completo, identificacion, id_rol,
+                                correo, tipo_contrato, pass_hash,
                                 telefono, estado, cod_centro
                      FROM usuario 
-                     WHERE correo = :email""")
-        result = db.execute(query, {"email": email}).mappings().first()
+                     WHERE correo = :direccion_correo""")
+        result = db.execute(query, {"direccion_correo": email}).mappings().first()
         if not result:
-            logger.warning(f"Usuario no encontrado con el correo: {email}")
             return None
         return result
     except SQLAlchemyError as e:
         logger.error(f"Error al obtener usuario por email: {e}")
         raise Exception("Error de base de datos al obtener el usuario")
-    
 
-def get_user_by_id(db: Session, user_id: int):
+
+def get_user_by_id(db: Session, id_user: int):
     try:
-        query = text("""
-            SELECT id_usuario, nombre_completo, identificacion, id_rol,
-                   correo, tipo_contrato,
-                   telefono, estado, cod_centro
-            FROM usuario
-            WHERE id_usuario = :user_id
-        """)
-        result = db.execute(query, {"user_id": user_id}).mappings().first()
+        query = text(""" SELECT  id_usuario, nombre_completo, identificacion, id_rol,
+                                correo, tipo_contrato,
+                                telefono, estado, cod_centro
+                     FROM usuario 
+                     WHERE id_usuario = :id """)
+        result = db.execute(query, {"id": id_user}).mappings().first()
         return result
     except SQLAlchemyError as e:
         logger.error(f"Error al obtener usuario por id: {e}")
-        raise Exception("Error de base de datos al obtener el usuario por id")
+        raise Exception("Error de base de datos al obtener el usuario")
+
 
 def update_user(db: Session, user_id: int, user_update: UserUpdate) -> bool:
     try:
@@ -81,47 +78,32 @@ def update_user(db: Session, user_id: int, user_update: UserUpdate) -> bool:
         db.rollback()
         logger.error(f"Error al actualizar usuario: {e}")
         raise Exception("Error de base de datos al actualizar el usuario")
+
+
+def modify_status_user(db: Session, user_id: int):
+    try:
+        query = text( """
+                     UPDATE usuario SET estado = IF(estado, FALSE, TRUE)
+                     WHERE id_usuario = :id
+                    """ )
+        db.execute(query, {"id": user_id})
+        db.commit()
+        return True
+    except SQLAlchemyError as e:
+        db.rollback()
+        logger.error(f"Error al modificar el estado de usuario: {e}")
+        raise Exception("Error de base de datos al modificar estado del usuario")
     
-def deactivate_user(db: Session, user_id: int) -> bool:
+def get_users_by_centro(db: Session, cod_centro: int):
     try:
         query = text("""
-            UPDATE usuario
-            SET estado = false
-            WHERE id_usuario = :user_id
+            SELECT id_usuario, nombre_completo, identificacion, id_rol,
+                   correo, tipo_contrato, telefono, estado, cod_centro
+            FROM usuario
+            WHERE cod_centro = :cod_centro
         """)
-        db.execute(query, {"user_id": user_id})
-        db.commit()
-        return True
+        result = db.execute(query, {"cod_centro": cod_centro}).mappings().all()
+        return result
     except SQLAlchemyError as e:
-        db.rollback()
-        logger.error(f"Error al desactivar usuario: {e}")
-        raise Exception("Error de base de datos al desactivar el usuario")
-
-
-def modify_status_user(db: Session, user_id: int) -> bool:
-    try:
-        # Obtener el estado actual
-        query_select = text("""
-            SELECT estado FROM usuario WHERE id_usuario = :user_id
-        """)
-        result = db.execute(query_select, {"user_id": user_id}).first()
-        if result is None:
-            logger.warning(f"Usuario no encontrado con id: {user_id}")
-            return False
-
-        estado_actual = result[0]
-        nuevo_estado = not estado_actual
-
-        # Actualizar el estado
-        query_update = text("""
-            UPDATE usuario
-            SET estado = :nuevo_estado
-            WHERE id_usuario = :user_id
-        """)
-        db.execute(query_update, {"nuevo_estado": nuevo_estado, "user_id": user_id})
-        db.commit()
-        return True
-    except SQLAlchemyError as e:
-        db.rollback()
-        logger.error(f"Error al modificar el estado del usuario: {e}")
-        raise Exception("Error de base de datos al modificar el estado del usuario")
+        logger.error(f"Error al obtener usuarios por cod_centro: {e}")
+        raise Exception("Error de base de datos al obtener los usuarios")

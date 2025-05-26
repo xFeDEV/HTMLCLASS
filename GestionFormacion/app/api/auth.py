@@ -1,3 +1,4 @@
+
 from typing import Annotated
 from fastapi import APIRouter, Depends,HTTPException
 from sqlalchemy.orm import Session
@@ -22,11 +23,13 @@ def login_for_access_token(
             detail="Datos Incorrectos en email o password",
             headers={"WWW-Authenticate": "Bearer"},
         )
+    
     access_token = create_access_token(
-        data={"sub": user.id_usuario, "rol":user.id_rol},
+        data={"sub": str(user.id_usuario), "rol":user.id_rol}
     )
 
     return ResponseLoggin(
         user=user,
         access_token=access_token
     )
+
