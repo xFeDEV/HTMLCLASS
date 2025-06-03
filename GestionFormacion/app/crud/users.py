@@ -34,11 +34,13 @@ def create_user(db: Session, user: UserCreate) -> Optional[bool]:
 
 def get_user_by_email(db: Session, email: str):
     try:
-        query = text("""SELECT  id_usuario, nombre_completo, identificacion, id_rol,
-                                correo, tipo_contrato, pass_hash,
-                                telefono, estado, cod_centro
-                     FROM usuario 
-                     WHERE correo = :direccion_correo""")
+        query = text("""
+            SELECT u.id_usuario, u.nombre_completo, u.identificacion, u.id_rol, r.nombre AS nombre_rol,
+                   u.correo, u.tipo_contrato, u.pass_hash, u.telefono, u.estado, u.cod_centro
+            FROM usuario u
+            INNER JOIN rol r ON u.id_rol = r.id_rol
+            WHERE u.correo = :direccion_correo
+        """)
         result = db.execute(query, {"direccion_correo": email}).mappings().first()
         if not result:
             return None
@@ -50,11 +52,13 @@ def get_user_by_email(db: Session, email: str):
 
 def get_user_by_id(db: Session, id_user: int):
     try:
-        query = text(""" SELECT  id_usuario, nombre_completo, identificacion, id_rol,
-                                correo, tipo_contrato,
-                                telefono, estado, cod_centro
-                     FROM usuario 
-                     WHERE id_usuario = :id """)
+        query = text("""
+            SELECT u.id_usuario, u.nombre_completo, u.identificacion, u.id_rol, r.nombre AS nombre_rol,
+                   u.correo, u.tipo_contrato, u.telefono, u.estado, u.cod_centro
+            FROM usuario u
+            INNER JOIN rol r ON u.id_rol = r.id_rol
+            WHERE u.id_usuario = :id
+        """)
         result = db.execute(query, {"id": id_user}).mappings().first()
         return result
     except SQLAlchemyError as e:
@@ -97,10 +101,11 @@ def modify_status_user(db: Session, user_id: int):
 def get_users_by_centro(db: Session, cod_centro: int):
     try:
         query = text("""
-            SELECT id_usuario, nombre_completo, identificacion, id_rol,
-                   correo, tipo_contrato, telefono, estado, cod_centro
-            FROM usuario
-            WHERE cod_centro = :cod_centro
+            SELECT u.id_usuario, u.nombre_completo, u.identificacion, u.id_rol, r.nombre AS nombre_rol,
+                   u.correo, u.tipo_contrato, u.telefono, u.estado, u.cod_centro
+            FROM usuario u
+            INNER JOIN rol r ON u.id_rol = r.id_rol
+            WHERE u.cod_centro = :cod_centro
         """)
         result = db.execute(query, {"cod_centro": cod_centro}).mappings().all()
         return result
